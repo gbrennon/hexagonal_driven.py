@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "hexagonal_driven.py"
+version = "0.1.0"
+description = ""
+authors = ["Gláuber Brennon <glauberbrennon@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+dependency-injector = "^4.33.0"
+black = "^21.6b0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+ipython = "^7.25.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
