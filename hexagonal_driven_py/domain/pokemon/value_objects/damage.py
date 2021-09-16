@@ -11,4 +11,4 @@ class Damage:
 
     def __post_init__(self):
         if self.value < self.__minimum_value_threshold:
-            raise ValidationError(f'Damage below {self.__minimum_value_threshold}')
+            raise ValidationError(f'Damage below {self.__minimum_value_threshold} is not possible')
