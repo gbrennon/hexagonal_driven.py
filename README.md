@@ -24,11 +24,16 @@
 
 #### Components of this layer:
 
-#### DTOs: Data Transfer Objects.
+##### DTOs: Data Transfer Objects.
 
 - The DTOs are going to be the description or our boundaries. What our `use cases` are going to use as `input/output`.
+```python
+class CreateProductDTO:
+    name: str
+    price: float
+```
 
-#### Entities: The living beings
+##### Entities: The living beings
 
 - The entities should be the most tangible abstraction of our domain.
 - This should be the lowest level implementation of our code. The business rule at its finest.
@@ -42,7 +47,7 @@ class Product:
 
 ```
 
-#### Value Objects: The worst enemy of the primitives.
+##### Value Objects: The worst enemy of the primitives.
 
 - This should represent a significant `value` for ur domain.
 - It should contain `self validation` logic!
@@ -61,21 +66,38 @@ class Price:
 
 ```
 
-#### Ports
+##### Ports
 
 - This is where we define the interfaces that should be implemented in outer-layers.
 - On this approach we should describe everything that will be implemented outside in here.
     - Repositories: This describes the interfaces for the repository pattern implementation
+```python
+class ProductRepository(ABC):
+    @abstractmethod
+    def persist(self, product: Product) -> None:
+        pass
+
+```
     - Use Cases: This describes the interface for an application service
+```python
+class CreateProductUseCase(ABC):
+    @abstractmethod
+    def execute(self, dto: CreateProductDTO) -> None:
+        pass
+
+```
     - Services: This describes the interface for a domain service
 
 
-## Application
+### Application
 
-### Commands
+#### Components of this layer:
+
+
+#### Commands
 
 - A `command` is the is the concrete implementation of an `usecase` that should cause `side effects` in the system.
 
-### Queries
+#### Queries
 
 - A `query` is the concrente implementation of an `usecase` that should retrieve data from our system.
