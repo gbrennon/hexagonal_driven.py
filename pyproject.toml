@@ -8,6 +8,7 @@ authors = ["Gláuber Brennon <glauberbrennon@gmail.com>"]
 python = "^3.9"
 dependency-injector = "^4.33.0"
 black = "^21.6b0"
+pydantic = "^1.8.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
