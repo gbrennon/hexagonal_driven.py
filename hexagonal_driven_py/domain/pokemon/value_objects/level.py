@@ -10,5 +10,5 @@ class Level:
     value: int
 
     def __post_init__(self):
-        if self.value < self.__minimum_value_threshold
+        if self.value < self.__minimum_value_threshold:
             raise ValidationError(f'Level below {self.__minimum_value_threshold}')
