@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from hexagonal_driven_py.domain.example.value_objects.element_enum import ElementEnum
+from hexagonal_driven_py.domain.pokemon.value_objects.element_enum import ElementEnum
 
 
 @dataclass
